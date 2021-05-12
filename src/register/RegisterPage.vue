@@ -7,7 +7,7 @@
         <input
           type="text"
           v-model="user.firstName"
-          v-validate="'required'"
+          v-validate="{ required: true, alpha: true }"
           name="firstName"
           class="form-control"
           :class="{ 'is-invalid': submitted && errors.has('firstName') }"
@@ -24,7 +24,7 @@
         <input
           type="text"
           v-model="user.lastName"
-          v-validate="'required'"
+          v-validate="{ required: true, alpha: true }"
           name="lastName"
           class="form-control"
           :class="{ 'is-invalid': submitted && errors.has('lastName') }"
@@ -58,7 +58,7 @@
         <input
           type="password"
           v-model="user.password"
-          v-validate="'min:8|number|upCase'"
+          v-validate="'required|min:8|number|upCase'"
           name="password"
           class="form-control"
           :class="{ 'is-invalid': submitted && errors.has('password') }"
